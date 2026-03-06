@@ -112,3 +112,8 @@ def study_session(questions, timer_running=False):
     print("Accuracy:", round(accuracy, 2), "%")
     print("Time spent:", time_spent, "seconds")
     print("Average time per card:", avg_time, "seconds")
+
+    if wrong_cards:
+        retry = input("\nRetry incorrect questions? (Y/N): ").upper()
+        if retry == "Y":
+            study_session(wrong_cards)
