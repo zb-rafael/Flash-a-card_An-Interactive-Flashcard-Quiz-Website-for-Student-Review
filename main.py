@@ -58,6 +58,11 @@ def pomodoro_timer():
         time.sleep(1)
     print("Break finished! You can continue studying.")
 
+def start_pomodoro_in_background():
+    timer_thread = threading.Thread(target=pomodoro_timer)
+    timer_thread.daemon = True 
+    timer_thread.start()
+
 def study_session():
     start_timer = input("Start Pomodoro Timer? (Y/N): ").upper()
     if start_timer == "Y":
