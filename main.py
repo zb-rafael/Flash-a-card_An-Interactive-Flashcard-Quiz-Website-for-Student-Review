@@ -1,4 +1,5 @@
-# FLASH-A-CARD
+# FLASH-A-CARD: AN INTERACTIVE FLASHCARD QUIZ WEBSITE FOR STUDENT REVIEW
+# 8 CAMIA
 # RAFAEL, ZYA KYNDER TARHATA B.
 # LAURINO, JUSTINE MATTHEW B.
 # DE GUZMAN, ALESSANDRA FIONA M.
@@ -10,11 +11,13 @@ def show_instructions():
     print("----- INSTRUCTIONS -----")
     print("Flash-a-card helps you review Grade 8 subjects using flashcards !")
     print("How to use:")
-    print("1. Choose a topic.")
-    print("2. Answer questions.")
-    print("3. Explanations appear after answering.")
-    print("4. View session summary at the end.")
-    print("5. Start optional Pomodoro timer for extra focus.")
+    print("1. Choose a subject.")
+    print("2. Choose a topic.")
+    print("3. Answer the questions.")
+    print("4. Explanations appear after answering.")
+    print("5. View your session summary.")
+    print("6. Retry incorrect questions if needed.")
+    print("7. Optional Pomodoro timer for extra focus.")
     input("Press ENTER to return to menu.")
 
 def load_questions(filename):
@@ -117,3 +120,52 @@ def study_session(questions, timer_running=False):
         retry = input("\nRetry incorrect questions? (Y/N): ").upper()
         if retry == "Y":
             study_session(wrong_cards)
+def main():
+    subjects = {
+        "1": ("Chemistry", "Chemistry.csv")
+    }
+
+    while True:
+        print("\n====== FLASH-A-CARD ======")
+        print("1. Start Study Session")
+        print("2. Instructions")
+        print("3. Exit")
+
+        choice = input("Choose option: ")
+
+        if choice == "1":
+            print("\nSelect Subject:")
+            for key, value in subjects.items():
+                print(key + ".", value[0])
+
+            subject_choice = input("Choose subject: ")
+
+            if subject_choice not in subjects:
+                print("Invalid subject.")
+                continue
+
+            subject_name, filename = subjects[subject_choice]
+
+            questions = load_questions(filename)
+            topics = get_topics(questions)
+
+            print("\nAvailable Topics:")
+            for i, topic in enumerate(topics):
+                print(i + 1, ".", topic)
+
+            topic_choice = int(input("Select topic number: "))
+            selected_topic = topics[topic_choice - 1]
+
+            filtered_questions = filter_by_topic(questions, selected_topic)
+            study_session(filtered_questions)
+
+        elif choice == "2":
+            show_instructions()
+
+        elif choice == "3":
+            print("Goodbye!")
+            break
+
+        else:
+            print("Invalid choice.")
+main()
