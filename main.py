@@ -99,3 +99,16 @@ def study_session(questions, timer_running=False):
         print("Explanation:", q["explanation"])
 
     end_time = time.time()
+
+    total = correct + incorrect
+    accuracy = (correct / total) * 100
+    time_spent = round(end_time - start_time, 2)
+    avg_time = round(time_spent / total, 2)
+
+    print("\n----- SESSION SUMMARY -----")
+    print("Total cards:", total)
+    print("Correct:", correct)
+    print("Incorrect:", incorrect)
+    print("Accuracy:", round(accuracy, 2), "%")
+    print("Time spent:", time_spent, "seconds")
+    print("Average time per card:", avg_time, "seconds")
