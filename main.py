@@ -24,6 +24,16 @@ def load_questions(filename):
         for row in reader:
             questions.append(row)
     return questions
+
+def get_topics(questions):
+    topics = []
+    for q in questions:
+        if q["topic"] not in topics:
+            topics.append(q["topic"])
+    return topics
+
+def filter_by_topic(questions, selected_topic):
+    return [q for q in questions if q["topic"] == selected_topic]
     
 def pomodoro_timer():
     study_time = 1500  # 25 minutes
