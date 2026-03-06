@@ -63,9 +63,39 @@ def start_pomodoro_in_background():
     timer_thread.daemon = True 
     timer_thread.start()
 
-def study_session():
+def study_session(questions, timer_running=False):
+    correct = 0
+    incorrect = 0
+    wrong_cards = []
+
+    if not timer_running:
+        start_timer = input("Start Pomodoro Timer? (Y/N): ").upper()
+
     start_timer = input("Start Pomodoro Timer? (Y/N): ").upper()
     if start_timer == "Y":
-        pomodoro_timer()
-        
-study_session()
+        start_pomodoro_in_background()
+
+    start_time = time.time()
+
+    for q in questions:
+        print("-"*500)
+        print("Question:", q["question"])
+        print(q["choiceA"])
+        print(q["choiceB"])
+        print(q["choiceC"])
+        print(q["choiceD"])
+
+        answer = input("Your answer: ").upper()
+
+        if answer == q["answer"].upper():
+            print("Correct!")
+            correct += 1
+        else:
+            print("Incorrect.")
+            print("Correct answer:", q["answer"])
+            incorrect += 1
+            wrong_cards.append(q)
+
+        print("Explanation:", q["explanation"])
+
+    end_time = time.time()
