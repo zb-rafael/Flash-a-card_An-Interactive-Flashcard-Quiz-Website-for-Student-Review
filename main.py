@@ -7,6 +7,9 @@ import csv
 import time
 import threading
 
+on_break = False
+timer_running = False
+
 def show_instructions():
     print("----- INSTRUCTIONS -----")
     print("Flash-a-card helps you review Grade 8 subjects using flashcards !")
@@ -62,23 +65,35 @@ def pomodoro_timer():
     print("Break finished! You can continue studying.")
 
 def start_pomodoro_in_background():
-    timer_thread = threading.Thread(target=pomodoro_timer)
-    timer_thread.daemon = True 
-    timer_thread.start()
+    global timer_running
 
-def study_session(questions, timer_running=False):
+    if not timer_running:
+        timer_thread = threading.Thread(target=pomodoro_timer)
+        timer_thread.daemon = True
+        timer_thread.start()
+        timer_running = True
+
+def study_session(questions):
+    global timer_running
+    global on_break
+    
     correct = 0
     incorrect = 0
     wrong_cards = []
 
-    if not timer_running:
-        start_timer = input("Start Pomodoro Timer? (Y/N): ").upper()
+   if not timer_running:
+        start_timer = input("\nStart Pomodoro Timer? (Y/N): ").upper()
 
-    start_timer = input("Start Pomodoro Timer? (Y/N): ").upper()
-    if start_timer == "Y":
-        start_pomodoro_in_background()
+        if start_timer == "Y":
+            start_pomodoro_in_background()
 
     start_time = time.time()
+
+    for q in questions:
+
+        while on_break:
+            print("\nPomodoro break is active. Questions will resume after the break.")
+            time.sleep(5)
 
     for q in questions:
         print("-"*500)
@@ -120,6 +135,7 @@ def study_session(questions, timer_running=False):
         retry = input("\nRetry incorrect questions? (Y/N): ").upper()
         if retry == "Y":
             study_session(wrong_cards)
+            
 def main():
     subjects = {
         "1": ("Chemistry", "Chemistry.csv")
