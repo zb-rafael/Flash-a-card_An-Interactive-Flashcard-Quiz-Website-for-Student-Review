@@ -13,6 +13,14 @@ def show_instructions():
     print("4. View session summary at the end.")
     print("5. Start optional Pomodoro timer for extra focus.")
     input("Press ENTER to return to menu.")
+
+def load_questions(filename):
+    questions = []
+    with open(filename, newline="", encoding="utf-8") as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            questions.append(row)
+    return questions
     
 def pomodoro_timer():
     study_time = 1500  # 25 minutes
