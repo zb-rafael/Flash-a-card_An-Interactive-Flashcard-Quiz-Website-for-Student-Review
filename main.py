@@ -44,13 +44,13 @@ def load_questions(filename):
 def get_topics(questions):
     topics = []
     for q in questions:
-        if q["topic"] not in topics:
-            topics.append(q["topic"])
+        if q["Topic"] not in topics:
+            topics.append(q["Topic"])
     return topics
     
 # Returns only the questions that match the chosen topic.
 def filter_by_topic(questions, selected_topic):
-    return [q for q in questions if q["topic"] == selected_topic]
+    return [q for q in questions if q["Topic"] == selected_topic]
 
 # Runs a 25-minute study timer followed by a 5-minute break inspired by the Pomodoro Technique.
 # The timer runs independently of the quiz using threading.
@@ -116,23 +116,23 @@ def study_session(questions):
     for q in questions:
         print()
         print("-"*500)
-        print("Question:", q["question"])
-        print(q["choiceA"])
-        print(q["choiceB"])
-        print(q["choiceC"])
-        print(q["choiceD"])
+        print("Question:", q["Question"])
+        print(q["ChoiceA"])
+        print(q["ChoiceB"])
+        print(q["ChoiceC"])
+        print(q["ChoiceD"])
         answer = input("Your answer: ").upper()
         # check if answer is correct
-        if answer == q["answer"].upper():
+        if answer == q["Answer"].upper():
             print("Correct!")
             correct += 1
         else:
             print("Incorrect.")
-            print("Correct answer:", q["answer"])
+            print("Correct answer:", q["Answer"])
             incorrect += 1
             wrong_cards.append(q)
         # show explanation after answering
-        print("Explanation:", q["explanation"])
+        print("Explanation:", q["Explanation"])
     # record session end time
     end_time = time.time()
     
