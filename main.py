@@ -50,8 +50,51 @@ def pomodoro_timer():
 
 def study_session():
 
-    start_timer = input("Start Pomodoro Timer? (Y/N): ").upper()
-    if start_timer == "Y":
-        pomodoro_timer()
+    correct = 0
+    incorrect = 0
+    wrong_cards = []
+
+    # Ask user to start Pomodoro only if no timer is currently active
+    if not timer_running:
+        start_timer = input("\nStart Pomodoro Timer? (Y/N): ").upper()
+        if start_timer == "Y":
+            start_pomodoro_in_background()
+
+    # Record session start time for performance statistics
+    start_time = time.time()
+
+    # If the Pomodoro timer enters break mode, questions pause until the break ends.
+    for q in questions:
+        while on_break:
+            print("\nPomodoro break is active. Questions will resume after the break.")
+            time.sleep(5)
+
+    # Displays Flashcard Questions
+    for q in questions:
+        print()
+        print("-" * 500)
+        print("Question:", q["Question"])
+        print(q["ChoiceA"])
+        print(q["ChoiceB"])
+        print(q["ChoiceC"])
+        print(q["ChoiceD"])
+        answer = input("Your answer: ").upper()
+        # check if answer is correct
+        if answer == q["Answer"].upper():
+            print("Correct!")
+            correct += 1
+        else:
+            print("Incorrect.")
+            print("Correct answer:", q["Answer"])
+            incorrect += 1
+            wrong_cards.append(q)
+        # show explanation after answering
+        print("Explanation:", q["Explanation"])
+    # record session end time
+    end_time = time.time()
+
+    # Calculates and shows session statistics
+    total = correct + incorrect
+    accuracy = (correct / total) * 100
 
 study_session()
