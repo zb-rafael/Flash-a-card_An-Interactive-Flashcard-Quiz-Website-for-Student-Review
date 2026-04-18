@@ -97,4 +97,82 @@ def study_session():
     total = correct + incorrect
     accuracy = (correct / total) * 100
 
-study_session()
+    time_spent = round(end_time - start_time, 2)
+    avg_time = round(time_spent / total, 2)
+
+    print("\n----- SESSION SUMMARY -----")
+    print("Total cards:", total)
+    print("Correct:", correct)
+    print("Incorrect:", incorrect)
+    print("Accuracy:", round(accuracy, 2), "%")
+    print("Time spent:", time_spent, "seconds")
+    print("Average time per card:", avg_time, "seconds")
+
+    # Retry incorrect questions
+    # Allows students to review mistakes immediately
+    if wrong_cards:
+        retry = input("\nRetry incorrect questions? (Y/N): ").upper()
+        if retry == "Y":
+            study_session(wrong_cards)
+
+
+# Main Menu
+def main():
+    # dictionary storing subjects and their CSV files
+    subjects = {
+        "1": ("Chemistry", "Chemistry.csv") ,
+        "2": ("Physics", "Physics.csv")
+    }
+
+    while True:
+        print("\n========= FLASH-A-CARD =========")
+        print("1. Start Study Session")
+        print("2. Instructions")
+        print("3. Exit")
+
+        choice = input("Choose option: ")
+
+        # START STUDY SESSION
+        if choice == "1":
+            print("\nSelect Subject:")
+            for key, value in subjects.items():
+                print(key + ".", value[0])
+            subject_choice = input("Choose subject: ")
+            if subject_choice not in subjects:
+                print("Invalid subject.")
+                continue
+            subject_name, filename = subjects[subject_choice]
+
+            # load question data
+            questions = load_questions(filename)
+
+            # extract available topics
+            topics = get_topics(questions)
+
+            print("\nAvailable Topics:")
+            for i, topic in enumerate(topics):
+                print(i + 1, ".", topic)
+
+            topic_choice = int(input("Select topic number: "))
+            selected_topic = topics[topic_choice - 1]
+            # filter questions by topic
+            filtered_questions = filter_by_topic(questions, selected_topic)
+
+            # start quiz session
+            study_session(filtered_questions)
+
+        # Show Instructions
+        elif choice == "2":
+            show_instructions()
+
+        # End Program
+        elif choice == "3":
+            print("Goodbye friend !")
+            break
+
+        else:
+            print("Invalid choice.")
+
+
+# Starts the code
+main()
