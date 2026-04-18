@@ -1,4 +1,4 @@
-question,topic,choiceA,choiceB,choiceC,choiceD,answer,explanation
+Question,Topic,ChoiceA,ChoiceB,ChoiceC,ChoiceD,Answer,Explanation
 "What does Newton’s First Law state about an object?","Historical Development of Ideas of Motion","A. Stay at rest or uniform motion","B. Accelerate constantly","C. Move in circles","D. Stop immediately","A","Objects maintain their state unless acted on by a net force"
 "Which scientist first emphasized experimentation in motion?","Historical Development of Ideas of Motion","A. Aristotle","B. Galileo","C. Newton","D. Einstein","B","Galileo introduced systematic experiments"
 "According to Aristotle, what is required for motion?","Historical Development of Ideas of Motion","A. Force","B. Inertia","C. Gravity","D. Energy","A","He thought continuous force is needed for motion"
