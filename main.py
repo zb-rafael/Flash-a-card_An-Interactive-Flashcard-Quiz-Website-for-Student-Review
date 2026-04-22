@@ -113,7 +113,13 @@ def study_session(questions):
 
     # Ask ONLY once across the whole program
     if not timer_started_once:
-        start_timer = input("\nStart Pomodoro Timer for all sessions? (Y/N): ").upper()
+        while True:
+            start_timer = input("\nStart Pomodoro Timer? (Y/N): ").upper()
+
+            if start_timer in ["Y", "N"]:
+                break
+            print("Invalid input. Try again.")
+
         if start_timer == "Y":
             start_pomodoro_in_background()
             timer_started_once = True
