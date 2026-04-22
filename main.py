@@ -137,13 +137,23 @@ def study_session(questions):
     # Displays Flashcard Questions
     for q in questions:
         print()
-        print("-" * 500)
-        print("Question:", q["Question"])
-        print(q["ChoiceA"])
-        print(q["ChoiceB"])
-        print(q["ChoiceC"])
-        print(q["ChoiceD"])
-        answer = input("Your answer: ").upper()
+        print("-" * 70)
+        print(" " + q["Question"])
+        print("-" * 70)
+
+        print("| " + q["ChoiceA"])
+        print("| " + q["ChoiceB"])
+        print("| " + q["ChoiceC"])
+        print("| " + q["ChoiceD"])
+
+        print("-" * 70)
+
+        while True:
+            answer = input("Your answer (A/B/C/D): ").upper()
+
+            if answer in ["A", "B", "C", "D"]:
+                break
+            print("Invalid answer. Try again.")
         # check if answer is correct
         if answer == q["Answer"].upper():
             print("Correct!")
