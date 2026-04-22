@@ -1,0 +1,51 @@
+Quarter,Topic,Question,ChoiceA,ChoiceB,ChoiceC,ChoiceD,Answer,Explanation
+1st,Nature of Biology,What does biology study?,Rocks,Life and living organisms,Planets,Energy only,B,Biology is the study of life and living organisms.
+1st,Nature of Biology,Which is NOT a branch of biology?,Botany,Zoology,Astronomy,Microbiology,D,Astronomy is not a branch of biology; it studies space.
+1st,Nature of Biology,Biology is based on what process?,Random guessing,Scientific inquiry,Myths,Opinions only,A,Biology relies on scientific methods and evidence.
+1st,Nature of Biology,Why is biology important?,Explains living systems,Studies rocks,Ignores life,Avoids science,C,Biology helps explain how living organisms function.
+1st,Nature of Biology,Biology is a branch of?,Physical science,Life science,Earth science,Computer science,D,Biology is classified as a life science.
+1st,Characteristics of Life,Which is a characteristic of life?,Movement only,Growth and reproduction,Color,Shape,B,Living things grow and reproduce.
+1st,Characteristics of Life,Which is NOT a characteristic of life?,Response to stimuli,Organization,Random motion of objects,Metabolism,D,Random motion is not a defining trait of life.
+1st,Characteristics of Life,All living things are made of?,Rocks,Cells,Air,Energy,A,All organisms are composed of cells.
+1st,Characteristics of Life,Metabolism is?,Energy use,Color change,Size increase,Shape change,C,Metabolism refers to energy use in organisms.
+1st,Characteristics of Life,Living things maintain?,Chaos,Homeostasis,Randomness,Disorder,C,Homeostasis is internal balance in organisms.
+1st,Unifying Themes,What is the basic unit of life?,Atom,Cell,Tissue,Organ,B,The cell is the basic unit of life.
+1st,Unifying Themes,Heredity involves?,Energy transfer,Trait passing,Heat loss,Movement,D,Heredity is the passing of traits from parents to offspring.
+1st,Unifying Themes,Evolution explains?,Random rocks,Diversity of life,Weather,Physics,A,Evolution explains biodiversity and relationships of organisms.
+1st,Unifying Themes,Energy in ecosystems comes from?,Animals,Sun,Rocks,Water,C,Energy in ecosystems originates from the sun.
+1st,Unifying Themes,Structure relates to?,Function,Color,Size,Weight,D,Structure determines function in biological systems.
+2nd,Science as Inquiry,First step in scientific method?,Conclusion,Observation,Experiment,Hypothesis,B,Observation begins scientific inquiry.
+2nd,Science as Inquiry,A hypothesis is?,Random guess,Testable explanation,Fact,Law,D,A hypothesis is a testable explanation.
+2nd,Science as Inquiry,Data means?,Opinions,Collected information,Stories,Ideas,A,Data refers to collected information.
+2nd,Science as Inquiry,Variable is?,Constant factor,Changing factor,Result,Conclusion,C,A variable is something that changes in an experiment.
+2nd,Science as Inquiry,Conclusion is based on?,Guessing,Data,Emotion,Random choice,B,Conclusions are based on experimental data.
+2nd,Evolution,Who proposed natural selection?,Darwin,Mendel,Newton,Pasteur,A,Charles Darwin proposed natural selection.
+2nd,Evolution,Natural selection means?,Survival of best adapted,Survival of strongest only,Random survival,No change,C,Natural selection favors organisms best adapted to their environment.
+2nd,Evolution,Evolution results in?,No change,Genetic change,Random color,Size only,B,Evolution is genetic change over time.
+2nd,Evolution,Variation is caused by?,Mutation,Weather,Food,Water,D,Mutations create genetic variation.
+2nd,Evolution,Adaptation helps organisms?,Die faster,Survive better,Stop evolving,Stay same,A,Adaptations increase survival chances.
+2nd,Descent with Modification,Offspring inherit?,Random traits,Parental traits,Weather,Rocks,C,Offspring inherit traits from parents.
+2nd,Descent with Modification,Evolution happens over?,Seconds,Generations,Minutes,Hours,B,Evolution occurs over many generations.
+2nd,Descent with Modification,Species change due to?,No reason,Environmental pressure,Random noise,Color only,D,Environmental pressure drives species change.
+2nd,Descent with Modification,Fossils show?,Future life,Past life,Random objects,Weather,A,Fossils provide evidence of past life.
+2nd,Descent with Modification,Common ancestry means?,Same food,Shared ancestor,Same size,Same color,C,Species can share a common ancestor.
+3rd,Microscope,Microscope is used to study?,Stars,Cells,Mountains,Clouds,B,Microscopes are used to study cells.
+3rd,Microscope,Electron microscope uses?,Light,Electrons,Sound,Heat,D,Electron microscopes use electrons for imaging.
+3rd,Microscope,Highest magnification gives?,Blurry image,More detail,Less detail,No image,A,Higher magnification shows more detail.
+3rd,Microscope,Objective lens is used to?,Heat,Magnify,Cool,Measure,C,Objective lenses magnify specimens.
+3rd,Microscope,Stage holds?,Light,Specimen,Air,Lens,D,The stage holds the specimen.
+3rd,Cell,Basic unit of life is?,Atom,Cell,Organ,Tissue,B,The cell is the basic unit of life.
+3rd,Cell,Nucleus controls?,Movement,Cell activities,Color,Size,A,The nucleus controls cell functions.
+3rd,Cell,Cytoplasm is?,Outer layer,Jelly-like fluid,Nucleus,DNA,C,Cytoplasm fills the cell.
+3rd,Cell,Cell membrane is?,Rigid wall,Selective barrier,DNA,Protein only,D,It controls entry and exit of substances.
+3rd,Cell,Ribosomes make?,Energy,Proteins,Water,Fat,B,Ribosomes synthesize proteins.
+3rd,Cell Membrane & Transport,Diffusion is?,Active transport,Passive movement,Energy use,Growth,A,Diffusion is passive movement of molecules.
+3rd,Cell Membrane & Transport,Active transport requires?,No energy,Energy,Light,Heat,C,Active transport requires ATP energy.
+3rd,Cell Membrane & Transport,Osmosis is movement of?,Proteins,Water,Salt,Sugar,D,Osmosis is water movement across membranes.
+3rd,Cell Membrane & Transport,Facilitated diffusion uses?,No proteins,Transport proteins,ATP,Heat,B,It uses proteins to help molecules move.
+3rd,Cell Membrane & Transport,Cell membrane is?,Fully open,Selectively permeable,Solid wall,Random,A,It allows selective movement of substances.
+3rd,Phylogeny,Phylogeny studies?,Rocks,Evolutionary relationships,Weather,Cells,C,Phylogeny studies evolutionary relationships.
+3rd,Phylogeny,Tree of life shows?,Colors,Evolution links,Chemistry,Physics,D,It shows evolutionary relationships between species.
+3rd,Phylogeny,Common ancestor means?,Same food,Shared origin,Same size,Same shape,B,Species share a common ancestor.
+3rd,Phylogeny,Cladogram shows?,Energy,Evolutionary branching,Temperature,Mass,A,Cladograms show evolutionary branching patterns.
+3rd,Phylogeny,Similar DNA suggests?,Randomness,Related species,Weather,Size,C,Similar DNA indicates evolutionary relationships
