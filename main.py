@@ -4,43 +4,57 @@
 # LAURINO, JUSTINE MATTHEW B.
 # DE GUZMAN, ALESSANDRA FIONA M.
 
-# import needed libraries
+# Import required libraries for file handling, timing, and threading
 import csv
 import time
 import threading
 
-# initializing variables
+# Global variables used to control timer behavior across sessions
 on_break = False
 timer_running = False
 timer_started_once = False
 
 # Displays a simple guide explaining how the flashcard system works
 def show_instructions():
-    print("---------- INSTRUCTIONS ----------")
-    print("Flash-a-card helps you review Grade 8 topics using flashcards !")
-    print("How to use:")
-    print("1. Choose a subject.")
-    print("2. Choose a topic.")
-    print("3. Answer the questions.")
-    print("4. Explanations appear after answering.")
-    print("5. View your session summary.")
-    print("6. Retry incorrect questions if needed.")
-    print("7. Optional Pomodoro timer for extra focus.")
+        print("""
+    ------------------------------------------------------------
+    |                       INSTRUCTIONS                       |
+    ------------------------------------------------------------
+    | FLASH-A-CARD helps you review Grade 8 topics             |
+    | using interactive flashcards for better learning.        |
+    ------------------------------------------------------------
+    | HOW TO USE:                                              |
+    ------------------------------------------------------------
+    | 1. Choose a subject                                      |
+    | 2. Choose a topic                                        |
+    | 3. Answer the questions                                  |
+    | 4. View explanations after each answer                   |
+    | 5. Check your session summary                            |
+    | 6. Retry incorrect answers if needed                     |
+    | 7. Optional Pomodoro timer for focus                     |
+    ------------------------------------------------------------ """)
 
     # Pause the screen so the user can read instructions
-    input("Press ENTER to return to menu.")
+        input("Press ENTER to return to menu.")
 
 
 # Reads a CSV file and converts each row into a dictionary.
 # Each dictionary represents one flashcard question.
 def load_questions(filename):
-    questions = []  # list that will store all question dictionaries
-    with open(filename, newline="", encoding="utf-8") as file:
-        reader = csv.DictReader(file)  # reads CSV as dictionaries
-        for row in reader:
-            questions.append(row)  # add each question to the list
-    return questions
+    questions = []
+    try:
+        with open(filename, newline="", encoding="utf-8") as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                questions.append(row)
 
+        if len(questions) == 0:
+            print("Warning: No questions found in file.")
+    except FileNotFoundError:
+        print(f"Error: File '{filename}' not found.")
+        return []
+
+    return questions
 
 # Extracts all unique topic names from the questions list.
 # Prevents duplicate topic entries from appearing in the menu.
@@ -65,26 +79,28 @@ def pomodoro_timer():
     study_time = 1500
     break_time = 300
 
-    print("⏳ STUDY SESSION STARTED\nStay focused. You got this.")
+    print("STUDY SESSION STARTED !")
 
     for remaining in range(study_time, 0, -1):
         minutes = remaining // 60
         if remaining % 300 == 0 and remaining != study_time:
-            print(f"Heads up! {minutes} minutes left in study session.")
+            print(f"\nHeads up! {minutes} minutes left in study session.")
         time.sleep(1)
 
-    print("Study session finished!")
+    print("STUDY SESSION FINISHED !")
 
-    print("☕ Break time started (5 minutes).")
+    time.sleep(1)
+
+    print("5 MINUTE BREAK TIME STARTED :]")
 
     for remaining in range(break_time, 0, -1):
         if remaining == 60:
-            print("Heads up! Only 1 minute left in your break!")
+            print("\nHeads up! Only 1 minute left in your break!")
         time.sleep(1)
 
-    print("Break finished! You can continue studying.")
+    print("BREAK FINISHED !")
 
-    # 🔥 RESET so user can start again later
+    # RESET so user can start again later
     timer_running = False
     timer_started_once = False
 
@@ -170,18 +186,28 @@ def study_session(questions):
 
     # Calculates and shows session statistics
     total = correct + incorrect
-    accuracy = (correct / total) * 100
-
     time_spent = round(end_time - start_time, 2)
-    avg_time = round(time_spent / total, 2)
 
-    print("\n----- SESSION SUMMARY -----")
-    print("Total cards:", total)
-    print("Correct:", correct)
-    print("Incorrect:", incorrect)
-    print("Accuracy:", round(accuracy, 2), "%")
-    print("Time spent:", time_spent, "seconds")
-    print("Average time per card:", avg_time, "seconds")
+    if total == 0:
+        accuracy = 0
+        avg_time = 0
+    else:
+        accuracy = (correct / total) * 100
+        avg_time = round(time_spent / total, 2)
+
+    print()
+    print("-" * 70)
+    print("                           SESSION SUMMARY                     ")
+    print("-" * 70)
+
+    print("| Total Cards        : " + str(total))
+    print("| Correct            : " + str(correct))
+    print("| Incorrect          : " + str(incorrect))
+    print("| Accuracy           : " + str(round(accuracy, 2)) + " %")
+    print("| Time Spent         : " + str(time_spent) + " seconds")
+    print("| Avg Time / Card    : " + str(avg_time) + " seconds")
+
+    print("-" * 70)
 
     # Retry incorrect questions
     # Allows students to review mistakes immediately
@@ -189,7 +215,6 @@ def study_session(questions):
         retry = input("\nRetry incorrect questions? (Y/N): ").upper()
         if retry == "Y":
             study_session(wrong_cards)
-
 
 # Main Menu
 def main():
@@ -215,29 +240,37 @@ def main():
          █████╗  ██║     ███████║███████╗███████║    ███████║    ██║     ███████║██████╔╝██║  ██║
          ██╔══╝  ██║     ██╔══██║╚════██║██╔══██║    ██╔══██║    ██║     ██╔══██║██╔══██╗██║  ██║
          ██║     ███████╗██║  ██║███████║██║  ██║    ██║  ██║    ╚██████╗██║  ██║██║  ██║██████╔╝
-         ╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝    ╚═╝  ╚═╝     ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝
-                                ✦ INTERACTIVE FLASHCARD SYSTEM ✦
+         ╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝    ╚═╝  ╚═╝     ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝          
         """)
+        time.sleep(3)
         print("""
-        ╔══════════════════════════════════════════════════╗
-        ║                MAIN MENU                         ║
-        ╠══════════════════════════════════════════════════╣
-        ║  [1] Start Study Session                        ║
-        ║  [2] Instructions                               ║
-        ║  [3] Exit                                       ║
-        ╚══════════════════════════════════════════════════╝
+                      ╔══════════════════════════════════════════════════╗
+                      ║                    MAIN MENU                     ║
+                      ╠══════════════════════════════════════════════════╣
+                      ║  [1] Start Study Session                         ║
+                      ║  [2] Instructions                                ║
+                      ║  [3] Exit                                        ║
+                      ╚══════════════════════════════════════════════════╝
         """)
-        choice = input("Choose option: ")
+
+        while True:
+            choice = input("Choose option: ")
+
+            if choice in ["1", "2", "3"]:
+                break
+            print("Invalid choice. Try again.")
 
         # START STUDY SESSION
         if choice == "1":
             print("\nSelect Subject:")
             for key, value in subjects.items():
                 print(key + ".", value[0])
-            subject_choice = input("Choose subject: ")
-            if subject_choice not in subjects:
-                print("Invalid subject.")
-                continue
+            while True:
+                subject_choice = input("Choose subject: ")
+
+                if subject_choice in subjects:
+                    break
+                print("Invalid subject. Try again.")
             subject_name, filename = subjects[subject_choice]
 
             # load question data
@@ -250,7 +283,18 @@ def main():
             for i, topic in enumerate(topics):
                 print(i + 1, ".", topic)
 
-            topic_choice = int(input("Select topic number: "))
+            while True:
+                try:
+                    topic_choice = int(input("Select topic number: "))
+
+                    if 1 <= topic_choice <= len(topics):
+                        break
+                    else:
+                        print("Number out of range. Try again.")
+
+                except ValueError:
+                    print("Invalid input. Enter a number.")
+
             selected_topic = topics[topic_choice - 1]
             # filter questions by topic
             filtered_questions = filter_by_topic(questions, selected_topic)
@@ -269,11 +313,8 @@ def main():
             ║         THANK YOU FOR USING          ║
             ║            FLASH-A-CARD              ║
             ╠══════════════════════════════════════╣
-            ║   Keep studying. Keep improving.     ║
-            ╚══════════════════════════════════════╝
+    
             """)
-
-            print("Goodbye friend !")
             break
 
         else:
