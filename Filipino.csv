@@ -1,0 +1,48 @@
+Topic,Question,ChoiceA,ChoiceB,ChoiceC,ChoiceD,Answer,Explanation
+Komunikasyon,"Ano ang komunikasyon?","A. Pakikipagpalitan ng ideya at impormasyon","B. Pagpapadala ng mensahe lamang","C. Pagsusulat ng liham","D. Pagkopya ng teksto","A","Komunikasyon ay pagpapalitan ng impormasyon"
+Komunikasyon,"Layunin ng komunikasyon?","A. Magpahayag at maunawaan ang mensahe","B. Mag-utos lamang","C. Magsulat ng libro","D. Maglibang lamang","A","May dalawang panig ang komunikasyon"
+Komunikasyon,"Alin ang elemento nito?","A. Oras","B. Tagapakinig","C. Kulay","D. Layo","B","Tagapakinig ay bahagi ng proseso"
+Komunikasyon,"Verbal communication ay?","A. Kumpas lamang","B. Paggamit ng salita","C. Pagsayaw","D. Pagtingin","B","Gumagamit ito ng salita"
+Komunikasyon,"Nonverbal ay?","A. Pagsasalita","B. Pagsusulat","C. Kilos at ekspresyon","D. Pagbasa","C","Hindi gumagamit ng salita"
+
+Pakikinig,"Ano ang pakikinig?","A. Pagsusulat","B. Pag-unawa sa narinig","C. Pagsasalita","D. Pagkopya","B","May comprehension"
+Pakikinig,"Aktibong pakikinig?","A. Walang reaksyon","B. May pag-unawa at tugon","C. Pag-iwas","D. Pagsusulat","B","May feedback"
+Pakikinig,"Hadlang sa pakikinig?","A. Interes","B. Ingay","C. Pokus","D. Konsentrasyon","B","Ingay nakakaistorbo"
+Pakikinig,"Layunin nito?","A. Maghintay lang","B. Magbasa","C. Maunawaan ang mensahe","D. Mag-utos","C","Para sa comprehension"
+Pakikinig,"Kritikal na pakikinig?","A. Pagsusulat","B. Pagsasalita","C. Pagsusuri sa narinig","D. Basta pakikinig","C","May evaluation"
+
+Pagbabasa,"Ano ang pagbasa?","A. Pakikinig","B. Pag-unawa sa teksto","C. Pagsasalita","D. Pagsusulat","B","Comprehension"
+Pagbabasa,"Layunin nito?","A. Libangan","B. Kaalaman","C. Tulog","D. Pag-iwas","B","Para matuto"
+Pagbabasa,"Skimming?","A. Mabagal na pagbasa","B. Mabilis na pagkuha ng ideya","C. Pagsasaulo","D. Pagsusulat","B","Main idea lang"
+Pagbabasa,"Scanning?","A. Paghahanap ng tiyak na info","B. Buong teksto","C. Pagsusulat","D. Pagsasaulo","A","Specific info"
+Pagbabasa,"Konteksto?","A. Oras","B. Lugar","C. Kahulugan sa pangungusap","D. Tao","C","Helps meaning"
+
+Panonood,"Ano ito?","A. Pagsusulat","B. Pagtingin na may pag-unawa","C. Pakikinig","D. Pagsasalita","B","Interpretation"
+Panonood,"Layunin?","A. Libangan","B. Tulog","C. Pag-iwas","D. Pag-unawa sa mensahe","D","May meaning"
+Panonood,"Kritikal na panonood?","A. Pagsusuri","B. Basta panonood","C. Pag-uulit","D. Pag-ignore","A","Evaluation"
+Panonood,"Visual media?","A. Larawan at video","B. Teksto","C. Tunog","D. Amoy","A","Nakikita"
+Panonood,"Interpretasyon?","A. Hulaan","B. Pagbibigay kahulugan","C. Pagbasa","D. Pagsusulat","B","Meaning making"
+
+Amerikano,"Impluwensya?","A. Edukasyon at Ingles","B. Sayaw","C. Pagkain","D. Laro","A","Education system"
+Amerikano,"Sumikat?","A. Epiko","B. Maikling kwento","C. Tula","D. Nobela","B","Short story"
+Amerikano,"Katangian ng panitikan?","A. Realismo","B. Romantisismo","C. Modernismo","D. Iba-iba","D","Iba-ibang anyo"
+Amerikano,"Tema kadalasan?","A. Fantasy","B. Realidad","C. Katatawanan","D. Laro","B","Mas makatotohanan"
+Amerikano,"Wika na naimpluwensyahan?","A. Filipino","B. Ingles","C. Kastila","D. Hapon","B","English influence"
+
+Walang Panginoon,"May-akda?","A. Deogracias A. Rosario","B. Rizal","C. Balagtas","D. Santos","A","Author of the story"
+Walang Panginoon,"Tema?","A. Panlipunan","B. Pag-ibig","C. Katatawanan","D. Pantasya","A","Social issues"
+Walang Panginoon,"Uri?","A. Dula","B. Nobela","C. Maikling kwento","D. Tula","C","Short story"
+Walang Panginoon,"Tauhan ay karaniwang?","A. Hayop","B. Tao sa lipunan","C. Diyos","D. Superhero","B","Realistic characters"
+Walang Panginoon,"Setting?","A. Fantasya","B. Realistikong lipunan","C. Space","D. Future","B","Real world setting"
+
+Hapon,"Tema?","A. Romansa","B. Nasyonalismo","C. Aliwan","D. Pantasya","B","Patriotism"
+Hapon,"Anyo?","A. Nobela","B. Haiku","C. Dula","D. Awit","B","Haiku form"
+Hapon,"Katangian?","A. Komplikado","B. Mahaba","C. Maikli","D. Malawak","C","Short form"
+Hapon,"Panahon ng impluwensya?","A. Kastila","B. Hapon","C. Amerikano","D. Pre-kolonyal","B","Japanese period"
+Hapon,"Tema ng panitikan?","A. Pagkain","B. Nasyonalismo","C. Teknolohiya","D. Aliwan","B","Nationalism focus"
+
+Bagong Pagsibol,"Panahon?","A. Post-WWII","B. Kastila","C. Amerikano","D. Hapon","A","After war period"
+Bagong Pagsibol,"Tema?","A. Realidad","B. Pantasya","C. Aliwan","D. Laro","A","Real life issues"
+Bagong Pagsibol,"Katangian?","A. Tradisyunal","B. Modern at realistiko","C. Fantasy","D. Epiko","B","Modern literature"
+Bagong Pagsibol,"Layunin ng panitikan?","A. Maglibang","B. Magmulat ng isip","C. Magtago ng katotohanan","D. Magpatawa lang","B","Awareness of society"
+Bagong Pagsibol,"Estilo?","A. Makaluma","B. Direktang pagsulat","C. Pabula","D. Epiko","B","Straightforward writing"
